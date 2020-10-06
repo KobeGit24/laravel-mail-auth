@@ -17,7 +17,7 @@
                   <br>
                   <div>
                     @auth
-                      <a class="btn btn-primary"href="{{ route('phone.edit' $phone -> id)}}">EDIT</a>
+                      <a class="btn btn-primary"href="{{ route('phone.edit', $phone -> id)}}">EDIT</a>
                       <a class="btn btn-danger"href="{{ route('phone.delete', $phone -> id)}}">DELETE</a>
                     @else
                       <p style="color:red;">

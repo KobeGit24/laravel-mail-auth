@@ -20,4 +20,21 @@ class LoggedController extends Controller
     return redirect() -> route('phone.index');
   }
 
+  public function edit($id) {
+
+    $phone = Smartphone::findOrFail($id);
+
+    return view('phone-edit',compact('phone'));
+  }
+
+  public function update(Request $request, $id) {
+
+    $data = $request -> all();
+    $phone = Smartphone::findOrFail($id);
+
+    $phone -> update($data);
+
+    return redirect() -> route('phone.show', $id);
+  }
+
 }
