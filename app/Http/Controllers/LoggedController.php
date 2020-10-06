@@ -12,6 +12,19 @@ class LoggedController extends Controller
     $this->middleware('auth');
   }
 
+  public function create() {
+
+    return view('phone-create');
+  }
+
+  public function store(Request $request) {
+
+    $data = $request -> all();
+    $phone = Smartphone::create($data);
+
+    return redirect() -> route('phone.show', $phone -> id);
+  }
+
   public function destroy($id) {
 
     $phone = Smartphone::findOrFail($id);
@@ -36,5 +49,6 @@ class LoggedController extends Controller
 
     return redirect() -> route('phone.show', $id);
   }
+
 
 }

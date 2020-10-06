@@ -17,8 +17,11 @@
                   <br>
                   <div>
                     @auth
-                      <a class="btn btn-primary"href="{{ route('phone.edit', $phone -> id)}}">EDIT</a>
-                      <a class="btn btn-danger"href="{{ route('phone.delete', $phone -> id)}}">DELETE</a>
+                      <a class="btn btn-secondary" href="{{ route('phone.create', $phone -> id)}}">
+                        CREATE NEW SMARTPHONE
+                      </a>
+                      <a class="btn btn-primary" href="{{ route('phone.edit', $phone -> id)}}">EDIT</a>
+                      <a class="btn btn-danger" href="{{ route('phone.delete', $phone -> id)}}">DELETE</a>
                     @else
                       <p style="color:red;">
                         please LOGIN if you want <em><strong>EDIT</strong></em> or <em><strong>DELETE</strong></em> phone.

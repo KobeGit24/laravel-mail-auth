@@ -10,7 +10,14 @@
                 </div>
 
                 <div class="card-body">
-                  <ul>
+                  @auth
+                    <div style="text-align: center;">
+                      <a class="btn btn-secondary" href="{{ route('phone.create')}}">
+                        CREATE NEW SMARTPHONE
+                      </a>
+                    </div>  
+                  @endauth
+                  <ul style="margin-top: 30px;">
                     @foreach ($phones as $phone)
                       <li>
                         <a href="{{ route('phone.show', $phone -> id)}}">

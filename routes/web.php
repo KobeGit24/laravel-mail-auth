@@ -6,6 +6,10 @@ Auth::routes();
 
 Route::get('/', 'GuestController@index') -> name('phone.index');
 
+Route::get('/post/create', 'LoggedController@create') -> name('phone.create');
+
+Route::post('/post/store', 'LoggedController@store') -> name('phone.store');
+
 Route::get('/show/{id}', 'GuestController@show') -> name('phone.show');
 
 Route::get('/delete/{id}', 'LoggedController@destroy') -> name('phone.delete');
